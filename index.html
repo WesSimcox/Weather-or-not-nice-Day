@@ -11,7 +11,6 @@
     <title>Weather Dashboard</title>
 </head>
 
-
 <body>
     <header>
         <div class="h1-container d-flex translate-middle bg-dark justify-content-center">
@@ -22,16 +21,12 @@
     <main class="main">
         <div class="container-fluid">
             <div class="row page-content">
-                <!-- column 1 -->
                 <div class="col-sm-4 bg-light p-0">
-                    <!-- search form -->
                     <div class="form-container">
                         <form id="search-form">
-                            <!-- search input label -->
                             <div class="row m-0">
                                 <label for="search-input" class="search-label m-0 text-dark">Search for a City:</label>
                             </div>
-                            <!-- search label input and button-->
                             <div class="row m-0">
                                 <div class="col-sm-8 p-0 my-auto">
                                     <input type="text" id="search-input" name="search-input" class="search-input rounded">
@@ -44,37 +39,24 @@
                             </div>
                         </form>
                     </div>
-                    <!-- search history -->
                     <div id="search-history-container" class="row m-0 search-history-container">
-  
                     </div>
                 </div>
-    
-                <!-- column 2 -->
                 <div class="col-sm-8 p-0">
-                    <!-- current weather conditions -->
                     <div id="current-weather-container" class="row d-block">
-                        <!-- current weather title -->
                         <div class="current-title-container">
                             <h2 id="current-title" class="current-title d-inline"></h2>
                             <img id="current-weather-icon" class="d-inline" src="" alt="">
                         </div>
-                        <!-- current weather temperature -->
                         <p class="current-temperature" id="current-temperature"></p>
-                        <!-- current weather humidity -->
                         <p class="current-humidity" id="current-humidity"></p>
-                        <!-- current weather wind speed -->
                         <p class="current-wind-speed" id="current-wind-speed"></p>
-                        <!-- current weather uv index -->
                         <p class="current-uv-index" id="current-uv-index"></p>
                         <p class="current-number rounded" id="current-number"></p>
                     </div>
-                    <!-- 5 day forecast -->
                     <div class="row future-forecast-container d-block">
-                        <!-- 5 day forecast title-->
                         <h2 class="future-forecast-title" id="future-forecast-title"></h2>
                         <div id="forecasts-cards-container" class="forecasts-cards-container d-flex justify-content-between">
-                            <!-- future day forecard card -->
                             <div class="future-card bg-primary rounded">
                                 <p class="future-date" id="future-date-1"></p>
                                 <img id="future-icon-1" src="" alt="">
@@ -111,7 +93,7 @@
             </div>
         </div>
     </main>
-    
+
 <!-- linking Script -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

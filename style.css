@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+/* Colors for the UV index Background */
+.good {
+    background-color: green;
+}
+
+.okay {
+    background-color: yellow;
+}
+
+.bad {
+    background-color: red;
+}
+/* -----------------------------------*/
+
 .h1-container {
     padding: 4px;
 }
@@ -12,6 +26,7 @@
     padding: 10px;
 }
 
+/* Search Design */
 .search-label {
     font-size: 20px;
     font-weight: 600;
@@ -32,6 +47,7 @@
 .search-history-container {
     padding: 10px;
 }
+/* ------------- */
 
 .past-search {
     background-color: white;
@@ -48,6 +64,7 @@
     color: grey;
 }
 
+/* Current Weather Design */
 .current-weather-container {
     border-color: lightgrey;
     border-width: thin 0 thin thin;
@@ -88,18 +105,7 @@
     color: white;
     padding: 5px 10px;
 }
-
-.favorable {
-    background-color: green;
-}
-
-.moderate {
-    background-color: yellow;
-}
-
-.severe {
-    backgound-color: red;
-}
+/* ---------------------- */
 
 .future-forecast-container {
     margin: 5px 20px 0 20px;
