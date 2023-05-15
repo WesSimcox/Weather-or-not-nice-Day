@@ -23,19 +23,6 @@ let getCityWeather = function(city) {
         })
 };
 
-// function to handle city search form submit
-let searchSubmitHandler = function(event) {
-    event.preventDefault();
-    let cityName = $("#cityname").val().trim();
-    if(cityName) {
-        getCityWeather(cityName);
-        $("#cityname").val("");
-    } else {
-        // Shows alert if user attempts to search with no city typed
-        alert("Please enter the name of a City");
-    }
-};
-
 // function to display the information collected from openweathermap.org
 let displayWeather = function(weatherData) {
 
@@ -98,6 +85,20 @@ let displayWeather = function(weatherData) {
     
 };
 
+// function to handle city search form submit
+let searchSubmitHandler = function(event) {
+    event.preventDefault();
+    let cityName = $("#cityname").val().trim();
+    if(cityName) {
+        getCityWeather(cityName);
+        $("#cityname").val("");
+    } else {
+        // Shows alert if user attempts to search with no city typed
+        alert("Please enter the name of a City");
+    }
+};
+
+
 // function to save the city search history to local storage
 let saveSearchHistory = function (city) {
     if(!searchHistory.includes(city)){
@@ -111,6 +112,20 @@ let saveSearchHistory = function (city) {
 
     loadSearchHistory();
 };
+
+// load search history from local storage
+loadSearchHistory();
+
+// start page with the last city searched if there is one
+if (lastCitySearched != ""){
+    getCityWeather(lastCitySearched);
+}
+
+$("#search-form").submit(searchSubmitHandler);
+$("#search-history").on("click", function(event){
+    let prevCity = $(event.target).closest("a").attr("id");
+    getCityWeather(prevCity);
+});
 
 let loadSearchHistory = function() {
     searchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
@@ -131,17 +146,3 @@ let loadSearchHistory = function() {
         $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + searchHistory[i] + "'>" + searchHistory[i] + "</a>");
     }
   };
-
-// load search history from local storage
-loadSearchHistory();
-
-// start page with the last city searched if there is one
-if (lastCitySearched != ""){
-    getCityWeather(lastCitySearched);
-}
-
-$("#search-form").submit(searchSubmitHandler);
-$("#search-history").on("click", function(event){
-    let prevCity = $(event.target).closest("a").attr("id");
-    getCityWeather(prevCity);
-});
